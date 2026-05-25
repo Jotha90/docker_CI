@@ -1,0 +1,25 @@
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos temporales
+*.log
+*.tmp
+*.swp
+
+# Entornos de Node.js (por si en el futuro usas npm)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de entorno (si llegas a usar variables secretas)
+.env
+.env.local
+.env.*.local
+
+# Cache y build (si usas un bundler más adelante)
+dist/
+build/
+.cache/

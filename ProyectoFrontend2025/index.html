@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechSolutions - Prototipo Interactivo</title>
+  
+  <!-- Enlace al CSS externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ============================================= -->
+  <!-- ========= PÁGINA 1: INICIO (PÚBLICO) ======== -->
+  <!-- ============================================= -->
+  <div id="page-home" class="page">
+    <nav class="navbar">
+      <div class="container">
+        <a onclick="showPage('page-home')" class="logo">TechSolutions</a>
+        <ul class="nav-links">
+          <li><a onclick="showPage('page-home')">Inicio</a></li>
+          <li><a onclick="showPage('page-servicios')">Servicios</a></li>
+          <li><a onclick="showPage('page-login')">Admin Login</a></li>
+        </ul>
+      </div>
+    </nav>
+    <header class="slider">
+      <div class="container">
+        <h1>Soluciones Tecnológicas a tu Medida</h1>
+      </div>
+    </header>
+    <main class="container page-content">
+      <h2>¿Quiénes Somos?</h2>
+	  </br>
+      <p>Somos una empresa líder en el desarrollo y prestación de servicios de software de alta calidad, comprometida con la innovación, la eficiencia y la satisfacción de nuestros clientes. Nuestro objetivo es brindar soluciones tecnológicas que impulsen el crecimiento y la transformación digital de empresas de diferentes sectores.</p>
+	  </br>
+	  <p>Contamos con un equipo de profesionales altamente capacitados que combinan experiencia, creatividad y pasión por la tecnología para diseñar, implementar y mantener herramientas a la medida de las necesidades de cada cliente.</p>
+	  </br>
+	  <p>En nuestra empresa creemos firmemente en la importancia de la calidad, la seguridad y la adaptabilidad. Por eso, trabajamos con metodologías modernas y estándares internacionales que garantizan resultados confiables, escalables y sostenibles en el tiempo.</p>
+	  </br>
+	  <p>Más que un proveedor, nos consideramos un aliado estratégico que acompaña a nuestros clientes en cada etapa del proceso, aportando valor agregado y construyendo relaciones basadas en la confianza, el compromiso y la innovación constante.</p>
+    </main>
+    <!-- <footer class="footer"><p>&copy; 2025 TechSolutions.</p></footer> -->
+	<footer class="footer">
+	  <div class="footer-container">
+		<div class="footer-about">
+		  <h3>TechSolutions</h3>
+		  <p>
+			Somos una empresa especializada en ofrecer soluciones de software innovadoras 
+			que ayudan a empresas y profesionales a crecer en la era digital.
+		  </p>
+		</div>
+
+		<div class="footer-links">
+		  <h4>Enlaces rápidos</h4>
+		  <ul>
+			<li><a href="#about">Quiénes Somos</a></li>
+			<li><a href="#services">Servicios</a></li>
+			<li><a href="#contact">Contacto</a></li>
+			<li><a href="#privacy">Política de Privacidad</a></li>
+		  </ul>
+		</div>
+
+		<div class="footer-contact">
+		  <h4>Contáctanos</h4>
+		  <p>Email: contacto@techsolutions.com</p>
+		  <p>Tel: +57 300 123 4567</p>
+		  <p>Dirección: Calle 123 #45-67, Valledupar, Colombia</p>
+		</div>
+
+		<div class="footer-social">
+		  <h4>Síguenos</h4>
+		  <a href="#" class="social-icon" aria-label="Facebook">
+			<i data-lucide="facebook"></i>
+		  </a>
+		  <a href="#" class="social-icon" aria-label="Instagram">
+			<i data-lucide="instagram"></i>
+		  </a>
+		  <a href="#" class="social-icon" aria-label="LinkedIn">
+			<i data-lucide="linkedin"></i>
+		  </a>
+		</div>
+	  </div>
+
+	  <div class="footer-bottom">
+		<p>&copy; 2025 TechSolutions. Todos los derechos reservados.</p>
+	  </div>
+	</footer>
+
+	<!-- Script de Lucide (añádelo antes de cerrar </body>) -->
+	<script src="https://unpkg.com/lucide@latest"></script>
+	<script>
+	  lucide.createIcons();
+	</script>
+  </div>
+
+  <!-- ============================================= -->
+  <!-- ======= PÁGINA 2: SERVICIOS (PÚBLICO) ======= -->
+  <!-- ============================================= -->
+  <div id="page-servicios" class="page">
+    <nav class="navbar">
+      <div class="container">
+        <a onclick="showPage('page-home')" class="logo">TechSolutions</a>
+        <ul class="nav-links">
+          <li><a onclick="showPage('page-home')">Inicio</a></li>
+          <li><a onclick="showPage('page-servicios')">Servicios</a></li>
+          <li><a onclick="showPage('page-login')">Admin Login</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="container page-content">
+	  <h2>Nuestros Servicios</h2>
+	  <div class="services-grid">
+
+		<div class="service-card">
+		  <img src="img/Desarrollo Web Corporativo.jpg" alt="Desarrollo Web">
+		  <h3>Desarrollo Web Corporativo</h3>
+		  <p>
+			Creamos sitios web modernos, funcionales y adaptados a las necesidades de tu empresa. 
+			Garantizamos un diseño profesional, seguro y optimizado para todos los dispositivos.
+		  </p>
+		  <p class="price">$1,200.00</p>
+		</div>
+
+		<div class="service-card">
+		  <img src="img/Desarrollo de App Móvil.jpg" alt="App Móvil">
+		  <h3>Desarrollo de App Móvil</h3>
+		  <p>
+			Diseñamos y desarrollamos aplicaciones móviles nativas e híbridas para iOS y Android. 
+			Impulsa tu negocio con soluciones móviles innovadoras y escalables.
+		  </p>
+		  <p class="price">$3,500.00</p>
+		</div>
+
+		<div class="service-card">
+		  <img src="img/Consultoría TI.jpg" alt="Consultoría TI">
+		  <h3>Consultoría TI</h3>
+		  <p>
+			Te asesoramos en la implementación de soluciones tecnológicas estratégicas. 
+			Optimizamos procesos, reducimos costos y mejoramos la eficiencia de tu empresa.
+		  </p>
+		  <p class="price">$600.00</p>
+		</div>
+
+		<div class="service-card">
+		  <img src="img/Soporte Técnico 247.jpg" alt="Soporte Técnico">
+		  <h3>Soporte Técnico 24/7</h3>
+		  <p>
+			Brindamos asistencia técnica confiable y continua, con monitoreo preventivo. 
+			Solucionamos incidentes de forma rápida para que tu negocio nunca se detenga.
+		  </p>
+		  <p class="price">$300.00/mes</p>
+		</div>
+
+	  </div>
+	</main>
+	<footer class="footer">
+	  <div class="footer-container">
+		<div class="footer-about">
+		  <h3>TechSolutions</h3>
+		  <p>
+			Somos una empresa especializada en ofrecer soluciones de software innovadoras 
+			que ayudan a empresas y profesionales a crecer en la era digital.
+		  </p>
+		</div>
+
+		<div class="footer-links">
+		  <h4>Enlaces rápidos</h4>
+		  <ul>
+			<li><a href="#about">Quiénes Somos</a></li>
+			<li><a href="#services">Servicios</a></li>
+			<li><a href="#contact">Contacto</a></li>
+			<li><a href="#privacy">Política de Privacidad</a></li>
+		  </ul>
+		</div>
+
+		<div class="footer-contact">
+		  <h4>Contáctanos</h4>
+		  <p>Email: contacto@techsolutions.com</p>
+		  <p>Tel: +57 300 123 4567</p>
+		  <p>Dirección: Calle 123 #45-67, Valledupar, Colombia</p>
+		</div>
+
+		<div class="footer-social">
+		  <h4>Síguenos</h4>
+		  <a href="#" class="social-icon" aria-label="Facebook">
+			<i data-lucide="facebook"></i>
+		  </a>
+		  <a href="#" class="social-icon" aria-label="Instagram">
+			<i data-lucide="instagram"></i>
+		  </a>
+		  <a href="#" class="social-icon" aria-label="LinkedIn">
+			<i data-lucide="linkedin"></i>
+		  </a>
+		</div>
+	  </div>
+
+	  <div class="footer-bottom">
+		<p>&copy; 2025 TechSolutions. Todos los derechos reservados.</p>
+	  </div>
+	</footer>
+
+	<!-- Script de Lucide (añádelo antes de cerrar </body>) -->
+	<script src="https://unpkg.com/lucide@latest"></script>
+	<script>
+	  lucide.createIcons();
+	</script>
+  </div>
+  </div>
+
+  <!-- ================================================= -->
+  <!-- ========= PÁGINA 3: LOGIN SUPERADMIN ============ -->
+  <!-- ================================================= -->
+  <div id="page-login" class="page">
+	  <nav class="navbar">
+		  <div class="container">
+			<a onclick="showPage('page-home')" class="logo">TechSolutions</a>
+			<ul class="nav-links">
+			  <li><a onclick="showPage('page-home')">Inicio</a></li>
+			  <li><a onclick="showPage('page-servicios')">Servicios</a></li>
+			  <li><a onclick="showPage('page-login')">Admin Login</a></li>
+			</ul>
+		  </div>
+    </nav>
+    <div class="login-form">
+      <h2>Panel de Superadmin</h2>
+      <p>Ingresa tus credenciales para continuar.</p>
+      <form id="login-form-element">
+        <div class="form-group">
+          <label for="username">Usuario:</label>
+          <input type="text" id="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Contraseña:</label>
+          <input type="password" id="password" required>
+        </div>
+        <button type="submit" class="button button-primary" style="width:100%;">Ingresar</button>
+        <p id="login-error">Usuario o contraseña incorrectos.</p>
+      </form>
+    </div>
+	<footer class="footer">
+	  <div class="footer-container">
+		<div class="footer-about">
+		  <h3>TechSolutions</h3>
+		  <p>
+			Somos una empresa especializada en ofrecer soluciones de software innovadoras 
+			que ayudan a empresas y profesionales a crecer en la era digital.
+		  </p>
+		</div>
+
+		<div class="footer-links">
+		  <h4>Enlaces rápidos</h4>
+		  <ul>
+			<li><a href="#about">Quiénes Somos</a></li>
+			<li><a href="#services">Servicios</a></li>
+			<li><a href="#contact">Contacto</a></li>
+			<li><a href="#privacy">Política de Privacidad</a></li>
+		  </ul>
+		</div>
+
+		<div class="footer-contact">
+		  <h4>Contáctanos</h4>
+		  <p>Email: contacto@techsolutions.com</p>
+		  <p>Tel: +57 300 123 4567</p>
+		  <p>Dirección: Calle 123 #45-67, Valledupar, Colombia</p>
+		</div>
+
+		<div class="footer-social">
+		  <h4>Síguenos</h4>
+		  <a href="#" class="social-icon" aria-label="Facebook">
+			<i data-lucide="facebook"></i>
+		  </a>
+		  <a href="#" class="social-icon" aria-label="Instagram">
+			<i data-lucide="instagram"></i>
+		  </a>
+		  <a href="#" class="social-icon" aria-label="LinkedIn">
+			<i data-lucide="linkedin"></i>
+		  </a>
+		</div>
+	  </div>
+
+	  <div class="footer-bottom">
+		<p>&copy; 2025 TechSolutions. Todos los derechos reservados.</p>
+	  </div>
+	</footer>
+
+	<!-- Script de Lucide (añádelo antes de cerrar </body>) -->
+	<script src="https://unpkg.com/lucide@latest"></script>
+	<script>
+	  lucide.createIcons();
+	</script>
+  </div>
+
+  <!-- ============================================= -->
+  <!-- ========= PÁGINA 4: DASHBOARD ADMIN ========= -->
+  <!-- ============================================= -->
+  <div id="page-dashboard" class="page">
+    <aside class="sidebar">
+      <div class="sidebar-header"><h3>Dashboard</h3></div>
+      <ul class="sidebar-nav">
+        <li><a href="#" class="nav-link active" data-target="section-services">Gestionar Servicios</a></li>
+        <li><a href="#" class="nav-link" data-target="section-users">Gestionar Usuarios</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <button onclick="showPage('page-home')" class="button button-secondary" style="width:100%; margin-bottom: 10px;">Ver Sitio Público</button>
+        <button id="logout-button" class="button button-danger" style="width:100%;">Cerrar Sesión (Exit)</button>
+      </div>
+    </aside>
+    <main class="main-content">
+      <!-- Sección servicios -->
+      <section id="section-services" class="dashboard-section active">
+        <div class="content-box">
+          <div class="content-header">
+            <h2>Gestión de Servicios</h2>
+            <button class="button button-success" onclick="openModal('add', 'service')">+ Agregar Servicio</button>
+          </div>
+          <table class="crud-table">
+            <thead>
+              <tr><th>ID</th><th>Nombre</th><th>Precio</th><th>Acciones</th></tr>
+            </thead>
+            <tbody id="services-table-body">
+              <tr>
+                <td>1</td><td>Desarrollo Web Corporativo</td><td>$1,200</td>
+                <td class="actions-cell">
+                  <button class="button-secondary" onclick="openModal('edit', 'service', this)">Editar</button>
+                  <button class="button-danger" onclick="deleteRow(this)">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td><td>Desarrollo de App Móvil</td><td>$3,500</td>
+                <td class="actions-cell">
+                  <button class="button-secondary" onclick="openModal('edit', 'service', this)">Editar</button>
+                  <button class="button-danger" onclick="deleteRow(this)">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>3</td><td>Consultoría TI</td><td>$600</td>
+                <td class="actions-cell">
+                  <button class="button-secondary" onclick="openModal('edit', 'service', this)">Editar</button>
+                  <button class="button-danger" onclick="deleteRow(this)">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>4</td><td>Soporte Técnico 24/7</td><td>$300/mes</td>
+                <td class="actions-cell">
+                  <button class="button-secondary" onclick="openModal('edit', 'service', this)">Editar</button>
+                  <button class="button-danger" onclick="deleteRow(this)">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!-- Sección usuarios -->
+      <section id="section-users" class="dashboard-section">
+        <div class="content-box">
+          <div class="content-header">
+            <h2>Gestión de Usuarios</h2>
+            <button class="button button-success" onclick="openModal('add', 'user')">+ Agregar Usuario</button>
+          </div>
+          <table class="crud-table">
+            <thead>
+              <tr><th>ID</th><th>Nombre</th><th>Email</th><th>Rol</th><th>Acciones</th></tr>
+            </thead>
+            <tbody id="users-table-body">
+              <tr>
+                <td>101</td><td>Carlos Rivera</td><td>c.r@email.com</td><td>Cliente</td>
+                <td class="actions-cell">
+                  <button class="button-secondary" onclick="openModal('edit', 'user', this)">Editar</button>
+                  <button class="button-danger" onclick="deleteRow(this)">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>102</td><td>Ana Gómez</td><td>a.g@email.com</td><td>Cliente</td>
+                <td class="actions-cell">
+                  <button class="button-secondary" onclick="openModal('edit', 'user', this)">Editar</button>
+                  <button class="button-danger" onclick="deleteRow(this)">Eliminar</button>
+                </td>
+              </tr>
+              <tr>
+                <td>001</td><td>Admin User</td><td>admin@tech.com</td><td>Admin</td>
+                <td class="actions-cell">
+                  <button class="button-secondary" onclick="openModal('edit', 'user', this)">Editar</button>
+                  <button class="button-danger" onclick="deleteRow(this)">Eliminar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL (POPUP) -->
+  <!-- <div class="modal-overlay" id="crud-modal"> -->
+    <!-- <div class="modal-content"> -->
+      <!-- <div class="modal-header"> -->
+        <!-- <h3 id="modal-title">Título del Modal</h3> -->
+        <!-- <button class="close-modal" onclick="closeModal()">&times;</button> -->
+      <!-- </div> -->
+      <!-- <div class="modal-body" id="modal-body"></div> -->
+      <!-- <div class="modal-footer"> -->
+        <!-- <button class="button button-secondary" onclick="closeModal()">Cancelar</button> -->
+        <!-- <button class="button button-primary" id="modal-save-btn">Guardar Cambios</button> -->
+      <!-- </div> -->
+    <!-- </div> -->
+  <!-- </div> -->
+
+  <!-- Enlace al JS externo -->
+  <script src="script.js"></script>
+</body>
+</html>
