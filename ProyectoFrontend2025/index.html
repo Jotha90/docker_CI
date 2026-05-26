@@ -313,6 +313,13 @@
             <h2>Gestión de Servicios</h2>
             <button class="button button-success" onclick="openModal('add', 'service')">+ Agregar Servicio</button>
           </div>
+          <div class="api-status-box">
+            <span class="api-status-indicator" id="api-status-indicator"></span>
+            <div>
+              <strong>Estado API:</strong>
+              <span id="api-status-text">Verificando comunicacion...</span>
+            </div>
+          </div>
           <table class="crud-table">
             <thead>
               <tr><th>ID</th><th>Nombre</th><th>Precio</th><th>Acciones</th></tr>

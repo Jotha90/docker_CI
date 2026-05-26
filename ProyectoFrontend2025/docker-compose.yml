@@ -6,18 +6,20 @@ services:
     container_name: techsolutions-web
     ports:
       - "8081:80"
+    depends_on:
+      techsolutions-api:
+        condition: service_healthy
     networks:
       - techsolutions-net
     restart: unless-stopped
 
-  # Activa este servicio cuando la otra imagen ya exista o este publicada.
-  # Ejemplo:
-  #   docker-compose --profile api up -d
   techsolutions-api:
+    build:
+      context: ./api
     image: techsolutions-api:latest
     container_name: techsolutions-api
-    profiles:
-      - api
+    ports:
+      - "5000:5000"
     networks:
       - techsolutions-net
     restart: unless-stopped

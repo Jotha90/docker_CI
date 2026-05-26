@@ -20,6 +20,7 @@ function showPage(pageId) {
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById('login-form-element');
   const loginError = document.getElementById('login-error');
+  checkApiConnection();
 
   if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
@@ -61,6 +62,31 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Inicializar en Home */
   showPage('page-home');
 });
+
+async function checkApiConnection() {
+  const statusText = document.getElementById('api-status-text');
+  const statusIndicator = document.getElementById('api-status-indicator');
+
+  if (!statusText || !statusIndicator) {
+    return;
+  }
+
+  try {
+    const response = await fetch('/api/health');
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+    statusIndicator.classList.remove('offline');
+    statusIndicator.classList.add('online');
+    statusText.textContent = `${data.service} conectado correctamente`;
+  } catch (error) {
+    statusIndicator.classList.remove('online');
+    statusIndicator.classList.add('offline');
+    statusText.textContent = 'API no disponible';
+  }
+}
 
 /* --- Modal y CRUD --- */
 const modal = document.getElementById('crud-modal');

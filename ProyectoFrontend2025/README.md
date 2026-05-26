@@ -1,73 +1,164 @@
-# 🌐 TechSolutions Website
+# TechSolutions Website
 
-Este es el repositorio del sitio web de **TechSolutions**, una empresa dedicada a ofrecer soluciones tecnológicas a la medida de cada cliente.  
+Sitio web de TechSolutions preparado para ejecutarse con dos contenedores Docker:
 
-## 📋 Contenido del proyecto
-- `index.html` → Página principal  
-- `style.css` → Estilos generales  
-- `script.js` → Funcionalidad con JavaScript  
-- `img/` → Carpeta con los recursos gráficos  
+- `techsolutions-web`: frontend estatico servido con Nginx.
+- `techsolutions-api`: API en Python que responde datos JSON.
 
-## 🚀 Características
-- Diseño responsivo con HTML5 y CSS3.  
-- Estructura modular y fácil de mantener.  
-- Sección de servicios con precios y descripciones.  
-- Footer completo con enlaces, contacto y redes sociales.  
+Ambos contenedores se comunican por la red interna `techsolutions-net`. El navegador entra al frontend por `http://localhost:8081` y el frontend consulta la API usando `/api/health`.
 
-## 🛠️ Tecnologías utilizadas
-- **HTML5**  
-- **CSS3**  
-- **JavaScript**  
-- **Docker**
-- **Nginx**
+## Contenido del proyecto
 
-## 🐳 Ejecutar con Docker
-Este proyecto queda preparado como un contenedor web independiente en el puerto `8081`.
+- `index.html`: pagina principal.
+- `style.css`: estilos generales.
+- `script.js`: funcionalidad del frontend.
+- `img/`: imagenes del sitio.
+- `Dockerfile`: imagen del frontend con Nginx.
+- `nginx.conf`: configuracion del frontend y proxy hacia la API.
+- `docker-compose.yml`: levanta los dos contenedores.
+- `api/Dockerfile`: imagen del segundo contenedor.
+- `api/server.py`: API del segundo contenedor.
 
-Construir y levantar el contenedor:
+## Requisitos
 
-```bash
+Antes de ejecutar el proyecto necesitas:
+
+- Docker Desktop abierto.
+- Docker Engine en estado `Engine running`.
+- PowerShell o CMD ubicado en la carpeta del proyecto.
+
+Entrar a la carpeta:
+
+```powershell
+cd C:\proyectos\docker_CI\ProyectoFrontend2025
+```
+
+## Levantar los dos contenedores
+
+Ejecuta:
+
+```powershell
 docker-compose up -d --build
 ```
 
-Abrir en el navegador:
+Este comando construye y levanta:
+
+- `techsolutions-web` en el puerto `8081`.
+- `techsolutions-api` en el puerto `5000`.
+- La red interna `techsolutions-net`.
+
+Si tu Docker usa el subcomando moderno, tambien puedes usar:
+
+```powershell
+docker compose up -d --build
+```
+
+## Abrir la aplicacion
+
+Abre en el navegador:
 
 ```text
 http://localhost:8081
 ```
 
-Verificar que el contenedor esta activo:
+Para ver el indicador de comunicacion con la API:
 
-```bash
+1. Entra al sitio.
+2. Ve al login.
+3. Usa:
+
+```text
+Usuario: admin
+Clave: admin
+```
+
+4. En el dashboard debe aparecer `Estado API: techsolutions-api conectado correctamente`.
+
+## Probar la API directamente
+
+Desde el navegador puedes abrir:
+
+```text
+http://localhost:5000/health
+```
+
+Tambien puedes probar el proxy del frontend:
+
+```text
+http://localhost:8081/api/health
+```
+
+Si ambos responden JSON, la comunicacion esta funcionando.
+
+## Verificar desde consola
+
+Ver contenedores activos:
+
+```powershell
 docker ps
 ```
 
-Detener el contenedor:
+Ver logs del frontend:
 
-```bash
+```powershell
+docker logs techsolutions-web
+```
+
+Ver logs de la API:
+
+```powershell
+docker logs techsolutions-api
+```
+
+Ver la red compartida:
+
+```powershell
+docker network inspect techsolutions-net
+```
+
+## Detener todo
+
+```powershell
 docker-compose down
 ```
 
-## 🔗 Comunicación con el otro contenedor
-El archivo `nginx.conf` deja preparado un proxy para que este frontend envie las peticiones de `/api/` al contenedor `techsolutions-api` dentro de la red `techsolutions-net`.
+## Reconstruir despues de cambios
 
-Cuando la otra imagen ya exista o este publicada, actualiza el servicio `techsolutions-api` en `docker-compose.yml` con el nombre correcto de la imagen y ejecuta:
+Si cambias archivos del frontend, la API o la configuracion Docker:
 
-```bash
-docker-compose --profile api up -d
+```powershell
+docker-compose up -d --build
 ```
 
-Si tu Docker usa el subcomando moderno, tambien puedes reemplazar `docker-compose` por `docker compose`.
+Si algo queda raro por cache, reconstruye sin cache:
 
-Si el otro contenedor ya fue creado manualmente en Docker Desktop, conectalo a la misma red:
-
-```bash
-docker network connect --alias techsolutions-api techsolutions-net NOMBRE_DEL_CONTENEDOR
+```powershell
+docker-compose build --no-cache
+docker-compose up -d
 ```
 
-Para que el proxy funcione sin cambiar `nginx.conf`, ese contenedor debe llamarse `techsolutions-api` o tener ese alias dentro de la red.
+## Subir a GitHub
 
-## 📦 Cómo usar este proyecto
-1. Clona el repositorio:
-   ```bash
-   git clone https://github.com/mascosharon/ProyectoFrontend2025.git
+Sube todo el proyecto, incluyendo estos archivos:
+
+```text
+Dockerfile
+docker-compose.yml
+nginx.conf
+.dockerignore
+api/Dockerfile
+api/server.py
+index.html
+style.css
+script.js
+img/
+README.md
+```
+
+Despues, en el mismo equipo o en otro equipo con Docker Desktop, bastaria con:
+
+```powershell
+git clone URL_DEL_REPOSITORIO
+cd ProyectoFrontend2025
+docker-compose up -d --build
+```
