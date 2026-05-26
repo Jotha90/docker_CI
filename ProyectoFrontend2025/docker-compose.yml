@@ -1,0 +1,27 @@
+services:
+  techsolutions-web:
+    build:
+      context: .
+    image: techsolutions-web:latest
+    container_name: techsolutions-web
+    ports:
+      - "8081:80"
+    networks:
+      - techsolutions-net
+    restart: unless-stopped
+
+  # Activa este servicio cuando la otra imagen ya exista o este publicada.
+  # Ejemplo:
+  #   docker-compose --profile api up -d
+  techsolutions-api:
+    image: techsolutions-api:latest
+    container_name: techsolutions-api
+    profiles:
+      - api
+    networks:
+      - techsolutions-net
+    restart: unless-stopped
+
+networks:
+  techsolutions-net:
+    name: techsolutions-net
