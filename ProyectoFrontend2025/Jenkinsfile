@@ -4,21 +4,25 @@ pipeline {
     stages {
         stage('Validar archivos') {
             steps {
-                sh '''
-                echo "Validando estructura del proyecto..."
-                ls -la
-                test -f Dockerfile
-                test -f index.html
-                test -f nginx.conf
-                '''
+                dir('ProyectoFrontend2025') {
+                    sh '''
+                    echo "Validando estructura del proyecto..."
+                    ls -la
+                    test -f Dockerfile
+                    test -f index.html
+                    test -f nginx.conf
+                    '''
+                }
             }
         }
 
         stage('Construir imagen Docker') {
             steps {
-                sh '''
-                docker build -t proyectofrontend2025:jenkins .
-                '''
+                dir('ProyectoFrontend2025') {
+                    sh '''
+                    docker build -t proyectofrontend2025:jenkins .
+                    '''
+                }
             }
         }
 
