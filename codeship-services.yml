@@ -1,0 +1,13 @@
+web:
+  build:
+    image: techsolutions-web
+    dockerfile: Dockerfile
+  ports:
+    - "80"
+
+api:
+  build:
+    image: techsolutions-api
+    dockerfile: api/Dockerfile
+  ports:
+    - "5000"
