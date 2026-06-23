@@ -1,0 +1,20 @@
+language: minimal
+
+services:
+  - docker
+
+before_script:
+  - docker --version
+  - docker compose version || docker-compose --version
+
+script:
+  - docker build -t techsolutions-web:travis .
+  - docker build -t techsolutions-api:travis ./api
+  - docker compose up -d --build
+  - sleep 10
+  - docker ps
+  - docker exec techsolutions-web wget -q --spider http://127.0.0.1/
+  - docker exec techsolutions-api python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/health', timeout=3)"
+
+after_script:
+  - docker compose down || true
